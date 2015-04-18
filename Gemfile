@@ -26,6 +26,13 @@ gem 'figaro'
 #Add letteropener for working with mail in dev mode
 gem 'letter_opener', group: :development
 
+#Add automated admin system
+gem 'activeadmin', github: 'gregbell/active_admin'
+
+#Add Devise for user management
+gem 'devise'
+
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
