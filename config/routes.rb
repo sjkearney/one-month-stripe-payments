@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
 
+  get 'purchases/index'
+
   root 'pages#home'
 
   #Support stripe payments through charges
   resources :charges
 
+  # Route for showing purchases
   resources :purchases, only: [:show]
 
   # The priority is based upon order of creation: first created -> highest priority.
