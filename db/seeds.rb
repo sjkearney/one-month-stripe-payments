@@ -7,9 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 growth_hacking = Product.create(title: "Growth Hacking", 
- subtitle: "Ireland Best Cycle ROutes", author: "Stephen Kearney", 
- length: "30 minutes", price: "4.99", sku: "MAP1", 
- details: "You'll get a map journey for a particular region", description: %{<p>A good cycle route is a rare combination: somewhere with the right views and ease of traversing, within a safe environment and close to interesting stops and esential pit-stops.</p>
+ subtitle: "Ireland Best Cycle ROutes", author: "Stephen Kearney", price: "4.99", sku: "MAP1", description: %{<p>A good cycle route is a rare combination: somewhere with the right views and ease of traversing, within a safe environment and close to interesting stops and esential pit-stops.</p>
 
  <p>In these Maps, S Kearney introduces you to his favorite cycle routes and tips for getting the most out of them.</p>
  <p><strong>What You'll Learn</strong></p>
