@@ -10,7 +10,7 @@ def create
 
   charge = Stripe::Charge.create(
     :customer    => customer.id,
-    :amount      => params[:amount],
+    :amount      => product.price_in_cents,
     :description => product.full_description,
     :currency    => 'usd'
   )
