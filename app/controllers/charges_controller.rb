@@ -1,24 +1,23 @@
 class ChargesController <ApplicationController
 
 def create
-  # Amount in cents
-  @amount = 500
+  product = Product.find_by_sku("MAP1")
 
   customer = Stripe::Customer.create(
-    :email => 'example@stripe.com',
+    :email => params[:stripeToken],
     :card  => params[:stripeToken]
   )
 
   charge = Stripe::Charge.create(
     :customer    => customer.id,
-    :amount      => @amount,
-    :description => 'Rails Stripe customer',
+    :amount      => params[:amount],
+    :description => product.full_description,
     :currency    => 'usd'
   )
 
     purchase = Purchase.create(email: params[:stripeEmail], card: params[:stripeToken], 
-    amount: params[:amount], description: charge.description, currency: charge.currency,
-    customer_id: customer.id, product_id: 1, uuid: SecureRandom.uuid)
+    amount: product.price_in_cents, description: charge.description, currency: charge.currency,
+    customer_id: customer.id, product_id: product.id, uuid: SecureRandom.uuid)
 
 
 redirect_to purchase
