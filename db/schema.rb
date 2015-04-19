@@ -47,8 +47,14 @@ ActiveRecord::Schema.define(version: 20150419004648) do
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
 
   create_table "products", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "title"
+    t.string   "subtitle"
+    t.string   "author"
+    t.text     "description"
+    t.string   "sku"
+    t.decimal  "price"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "purchases", force: :cascade do |t|
